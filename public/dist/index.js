@@ -1,6 +1,7 @@
 var controles = document.querySelectorAll('[data-controle]');
 var estatisticas = document.querySelectorAll('[data-estatistica]');
 var robotron = document.querySelector('.robotron');
+var form = document.querySelector('.montador');
 var robos = [
     'assets/img/RobotronPreto.png',
     'assets/img/RobotronVermelho.png',
@@ -49,12 +50,16 @@ controles.forEach(function (controle) {
         atualizarControles(evento, operacao);
     });
 });
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+});
 function atualizarControles(controle, operacao) {
     var dataPeca = controle.target.parentNode;
     var pecasContador = dataPeca.children[1];
     if (operacao === '-') {
         if (pecasContador.value > 0) {
             pecasContador.value = parseInt(pecasContador.value) - 1;
+            subtrairEstatisticas(controle);
         }
     }
     else {
@@ -66,6 +71,12 @@ function somarEstatisticas(dados) {
     var dadosPeca = dados.target.dataset.peca;
     estatisticas.forEach(function (estatistica) {
         estatistica.textContent = parseInt(estatistica.textContent) + pecas[dadosPeca][estatistica.dataset.estatistica];
+    });
+}
+function subtrairEstatisticas(dados) {
+    var dadosPeca = dados.target.dataset.peca;
+    estatisticas.forEach(function (estatistica) {
+        estatistica.textContent = parseInt(estatistica.textContent) - pecas[dadosPeca][estatistica.dataset.estatistica];
     });
 }
 robotron.addEventListener('click', function (e) {

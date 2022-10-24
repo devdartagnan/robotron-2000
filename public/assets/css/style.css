@@ -17,7 +17,8 @@ body {
     font-weight: 300;
 }
 
-body, input {
+body,
+input {
     font-family: 'Teko', sans-serif;
 }
 
@@ -27,6 +28,42 @@ main {
     margin: 10vh 8vw 10vh 12vw;
     display: flex;
     gap: 1vw;
+}
+
+.fa-solid {
+    font-size: 20px;
+    color: cornsilk;
+    background-color: #3d4b63;
+    width: 30px;
+    border-radius: 16px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    left: 15%;
+}
+
+
+.fa-solid .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    margin-left: 40px;
+    background-color:rgba(47, 47, 56,0.5);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Teko', sans-serif;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.fa-solid:hover .tooltiptext {
+    visibility: visible;
 }
 
 .robotron {
@@ -55,11 +92,11 @@ main {
     line-height: 0.8;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    color: rgba(255,255,255,0.8)
+    color: rgba(255, 255, 255, 0.8)
 }
 
 .box {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
     border-left: 5px solid var(--main-cinza);
 }
@@ -71,7 +108,8 @@ main {
 }
 
 .montador {
-    height: 100%;;
+    height: 100%;
+    ;
 }
 
 .montador-conteudo {
@@ -211,9 +249,10 @@ main {
 }
 
 @media screen and (max-width: 1600px) {
-    body { 
+    body {
         font-size: 14px;
     }
+
     main {
         width: 90vw;
         height: 80vh;
@@ -222,7 +261,7 @@ main {
 }
 
 @media screen and (max-width: 1200px) {
-    body { 
+    body {
         font-size: 13px;
     }
 

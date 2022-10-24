@@ -1,6 +1,8 @@
 const controles = document.querySelectorAll('[data-controle]')
 const estatisticas = document.querySelectorAll('[data-estatistica]')
 const robotron = document.querySelector('.robotron')
+const form = document.querySelector('.montador')
+
 const robos = [
     'assets/img/RobotronPreto.png'
     , 'assets/img/RobotronVermelho.png'
@@ -52,6 +54,9 @@ controles.forEach(controle => {
 
     })
 })
+form.addEventListener('submit', (e)=>{
+    e.preventDefault()
+})
 
 function atualizarControles(controle:Event, operacao:string){
     const dataPeca = controle.target.parentNode
@@ -60,6 +65,7 @@ function atualizarControles(controle:Event, operacao:string){
     if (operacao === '-') {
         if (pecasContador.value > 0){
             pecasContador.value = parseInt(pecasContador.value) - 1
+            subtrairEstatisticas(controle)
         }
     } else {
         pecasContador.value = parseInt(pecasContador.value) + 1
@@ -73,6 +79,12 @@ function somarEstatisticas(dados:Event){
             estatistica.textContent = parseInt(estatistica.textContent) + pecas[dadosPeca][estatistica.dataset.estatistica]
     })
 }
+function subtrairEstatisticas(dados:Event){
+    const dadosPeca = dados.target.dataset.peca
+    estatisticas.forEach(estatistica => {
+            estatistica.textContent = parseInt(estatistica.textContent) - pecas[dadosPeca][estatistica.dataset.estatistica]
+    })
+}
 robotron.addEventListener('click', (e)=> {
     e.preventDefault()
     const robo = document.querySelector('.robo')
@@ -84,3 +96,4 @@ robotron.addEventListener('click', (e)=> {
         robo.src = robos[numbers]
     }
 })
+

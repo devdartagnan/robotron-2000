@@ -1,0 +1,26 @@
+{
+  "name": "robotron-2000",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leozinsk/-robotron-2000-projeto_inicial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leozinsk/-robotron-2000-projeto_inicial/issues"
+  },
+  "homepage": "https://github.com/Leozinsk/-robotron-2000-projeto_inicial#readme",
+  "devDependencies": {
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
